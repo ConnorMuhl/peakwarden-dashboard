@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#04040a">
 <title>Cockpit — PeakWarden</title>
+<link rel="manifest" href="manifest.json">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -602,6 +604,10 @@ panelClose.addEventListener('click', closePanel);
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closePanel();
 });
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
 </script>
 </body>
 </html>

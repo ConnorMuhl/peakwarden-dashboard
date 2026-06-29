@@ -1,0 +1,10 @@
+{
+  "name": "Cockpit",
+  "short_name": "Cockpit",
+  "description": "PeakWarden personal intelligence dashboard",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#04040a",
+  "theme_color": "#04040a",
+  "icons": []
+}
