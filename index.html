@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#04040a">
 <title>Cockpit — PeakWarden</title>
 <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -606,7 +607,11 @@ document.addEventListener('keydown', e => {
 });
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/peakwarden-dashboard/sw.js', {
+      scope: '/peakwarden-dashboard/'
+    });
+  });
 }
 </script>
 </body>
